@@ -1,0 +1,57 @@
+{
+  "complete_table": {
+    "rows_preserved": 2,
+    "complete_rows": 2,
+    "winner_settled": true,
+    "gate_eligible": [
+      "합성 판매처 A",
+      "합성 판매처 B"
+    ]
+  },
+  "partial_higher": {
+    "rows_preserved": 2,
+    "complete_rows": 1,
+    "winner_settled": true,
+    "gate_eligible": [
+      "합성 판매처 A"
+    ]
+  },
+  "partial_equal": {
+    "rows_preserved": 2,
+    "complete_rows": 1,
+    "winner_settled": false,
+    "gate_eligible": []
+  },
+  "partial_lower": {
+    "rows_preserved": 2,
+    "complete_rows": 1,
+    "winner_settled": false,
+    "gate_eligible": []
+  },
+  "exact_conditional": {
+    "rows_preserved": 2,
+    "complete_rows": 1,
+    "winner_settled": true,
+    "gate_eligible": [
+      "합성 판매처 A"
+    ]
+  },
+  "near_conditional": {
+    "rows_preserved": 2,
+    "complete_rows": 1,
+    "winner_settled": false,
+    "gate_eligible": []
+  },
+  "conflicting_alias": {
+    "rows_preserved": 2,
+    "complete_rows": 2,
+    "winner_settled": false,
+    "gate_eligible": []
+  },
+  "invalid_sum": {
+    "rows_preserved": 2,
+    "complete_rows": 1,
+    "winner_settled": false,
+    "gate_eligible": []
+  }
+}

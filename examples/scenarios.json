@@ -1,0 +1,196 @@
+[
+  {
+    "id": "complete_table",
+    "description": "배송비 포함 15000원과 16000원: 모두 가격 증거 게이트 통과",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 판매처 B",
+          "companyCode": "B",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 16000,
+          "deliveryPrice": 0,
+          "priceOrder": 16000
+        }
+      ]
+    }
+  },
+  {
+    "id": "partial_higher",
+    "description": "미확인 배송 행의 상품가만 16000원: 15000원보다 높음",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 미확인 판매처",
+          "companyCode": "U",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 16000,
+          "deliveryPrice": null,
+          "priceOrder": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "partial_equal",
+    "description": "미확인 행 하한이 15000원으로 동일: 확정하지 않음",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 미확인 판매처",
+          "companyCode": "U",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 15000,
+          "deliveryPrice": null,
+          "priceOrder": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "partial_lower",
+    "description": "미확인 행 하한 14000원: 더 쌀 수 있음",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 미확인 판매처",
+          "companyCode": "U",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 14000,
+          "deliveryPrice": null,
+          "priceOrder": 0
+        }
+      ]
+    }
+  },
+  {
+    "id": "exact_conditional",
+    "description": "정확한 조건부 배송 표식은 보존하되 일반 공개가 경쟁에서 분리",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 조건부 판매처",
+          "companyCode": "C",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 10000,
+          "deliveryPrice": 16777215,
+          "priceOrder": 10000,
+          "differentialPostYN": "Y"
+        }
+      ]
+    }
+  },
+  {
+    "id": "near_conditional",
+    "description": "Y 대신 y이면 같은 조건이라고 추정하지 않음",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 조건부 판매처",
+          "companyCode": "C",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 10000,
+          "deliveryPrice": 16777215,
+          "priceOrder": 10000,
+          "differentialPostYN": "y"
+        }
+      ]
+    }
+  },
+  {
+    "id": "conflicting_alias",
+    "description": "같은 판매처·옵션에 서로 다른 가격",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 13000,
+          "deliveryPrice": 3000,
+          "priceOrder": 16000
+        }
+      ]
+    }
+  },
+  {
+    "id": "invalid_sum",
+    "description": "상품가+배송비와 최종가 불일치",
+    "payload": {
+      "openMarketList": [
+        {
+          "shopName": "합성 판매처 A",
+          "companyCode": "A",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 12000,
+          "deliveryPrice": 3000,
+          "priceOrder": 15000
+        },
+        {
+          "shopName": "합성 오류 판매처",
+          "companyCode": "E",
+          "linkProdCode": "synthetic-option",
+          "mobilePrice": 17000,
+          "deliveryPrice": 1000,
+          "priceOrder": 17500
+        }
+      ]
+    }
+  }
+]
